@@ -1,0 +1,22 @@
+# Lima BEGIN
+# Make sure iptables and mount.fuse3 are available
+PATH="$PATH:/usr/sbin:/sbin"
+export PATH
+# Lima END
+
+#region Oh-my-posh
+arch=$(uname -m)
+case "$arch" in
+  'x86_64') bitness='64bit' ;;
+  'i386') bitness='32bit' ;;
+  'aarch64') bitness='arm64' ;;
+  'arm64') bitness='arm64' ;;
+  *) bitness='arm32' ;;
+esac
+
+export __SHELL_INFORMATION_POSH_258__="zsh@$ZSH_VERSION@$bitness"
+eval "$(oh-my-posh init zsh --print --config 'https://raw.githubusercontent.com/Ash258/Shovel-Ash258/refs/heads/main/support/oh-my-posh/Ash258.yml')"
+enable_poshtransientprompt
+#endregion Oh-my-posh
+
+eval "$(/home/jakubcabera.linux/.local/bin/mise activate zsh)" # added by https://mise.run/zsh
