@@ -1,0 +1,110 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+
+transient_prompt:
+    template: '{{ regexReplaceAll "@\\w+$" .Env.__SHELL_INFORMATION_POSH_258__ "" }}> '
+    foreground: '#8800dd'
+    background: transparent
+blocks:
+    - type: prompt
+      alignment: left
+      segments:
+        - properties:
+            cache_duration: none
+          foreground: '#ffee58'
+          type: root
+          style: plain
+        - properties:
+            cache_duration: none
+            prefix: x
+          foreground: '#e61010'
+          type: exit
+          style: powerline
+        - properties:
+            cache_duration: none
+            postfix: ""
+          foreground: '#ffffff'
+          type: session
+          style: plain
+    - type: prompt
+      alignment: left
+      segments:
+        - properties:
+            cache_duration: none
+            prefix: ' ﲵ '
+          template: '{{.Env.__SHELL_INFORMATION_POSH_258__}}'
+          foreground: '#fff000'
+          type: text
+          style: powerline
+        - properties:
+            cache_duration: none
+            prefix: ' ﳑ '
+          foreground: '#b600ff'
+          type: go
+          style: powerline
+        - properties:
+            cache_duration: none
+            prefix: '  '
+          foreground: '#b600ff'
+          type: node
+          style: powerline
+        - properties:
+            cache_duration: none
+            prefix: '  '
+          foreground: '#b600ff'
+          type: python
+          style: powerline
+    - type: prompt
+      alignment: left
+      segments:
+        - properties:
+            cache_duration: none
+          foreground: '#8e24aa'
+          type: os
+          style: plain
+        - properties:
+            cache_duration: none
+            style: short
+          foreground: '#ffffff'
+          powerline_symbol: 
+          background: '#0037da'
+          type: path
+          style: powerline
+        - properties:
+            ahead_and_behind_color: '#f26d50'
+            ahead_color: '#89569c'
+            behind_color: '#c50f1f'
+            cache_duration: none
+            color_background: true
+            display_stash_count: true
+            display_status: true
+            display_upstream_icon: true
+            local_changes_color: '#e74856'
+            stash_count_icon: ' '
+            status_colors_enabled: true
+          foreground: '#193549'
+          powerline_symbol: 
+          background: '#0ad014'
+          type: git
+          style: powerline
+        - properties:
+            cache_duration: none
+            prefix: ' <#fefefe>ﮫ</> '
+            style: austin
+            threshold: 500
+          foreground: '#ffffff'
+          powerline_symbol: 
+          background: '#8800dd'
+          type: executiontime
+          style: powerline
+    - type: prompt
+      alignment: left
+      segments:
+        - properties:
+            cache_duration: none
+          template: ' ❯'
+          foreground: '#0037da'
+          type: text
+          style: powerline
+      newline: true
+version: 3
+final_space: true

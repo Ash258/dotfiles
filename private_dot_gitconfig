@@ -1,0 +1,32 @@
+[user]
+	email = cabera.jakub@gmail.com
+	name = Jakub Čábera
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILzpYGHklHMAySUtWsk/smE1JpX4HAi87hEXMx7p2dFZ
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[core]
+	autocrlf = input
+	editor = code-insiders --wait
+	ignorecase = false
+	eol = lf
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[status]
+	submoduleSummary = true
+[credential "helperselector"]
+	selected = manager-core
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+
+[alias]
+	s = status
+	cm = commit -m
+	cam = commit -a -m
