@@ -14,6 +14,11 @@ for repo in "zsh-syntax-highlighting" "zsh-autosuggestions" "zsh-history-substri
 done
 #endregion zsh plugins
 
+# shellcheck disable=SC2206
+fpath=("${HOME}/.zsh/fpath" ${fpath})
+autoload -Uz compinit
+compinit
+
 #region Oh-my-posh
 arch=$(uname -m)
 case "${arch}" in
