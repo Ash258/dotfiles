@@ -1,7 +1,5 @@
 {{ if eq .chezmoi.os "linux" -}}
-#!/bin/sh
-echo 'TODO: Implement'
+	{{ template "install-debian-packages.sh" . }}
 {{ else if eq .chezmoi.os "darwin" -}}
-#!/bin/sh
-brew bundle install
+	{{ template "install-macos-packages.sh" . }}
 {{ end -}}
