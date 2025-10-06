@@ -4,7 +4,6 @@
 dest="${HOME}/.zsh/fpath"
 _SH='zsh'
 
-
 function tc() {
 	command -v "$1" &> /dev/null
 }
