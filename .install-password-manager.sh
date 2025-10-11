@@ -7,7 +7,7 @@ case "$(uname -s)" in
 Darwin)
     if ! type brew >/dev/null 2>&1; then
         echo 'Installing brew'
-        NON_INTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh || true)" </dev/null ## /dev/null skips pressing enter for the installation
+        INTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh || true)"
         eval "$(/opt/homebrew/bin/brew shellenv || true)"
         # shellcheck disable=SC2016
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
