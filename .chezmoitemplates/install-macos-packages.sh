@@ -1,4 +1,6 @@
 #!/bin/sh
 
 # hash: {{ include "Brewfile" | sha256sum }}
-brew bundle install
+brew bundle --file <<EOF
+{{ include "Brewfile" }}
+EOF
