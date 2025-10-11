@@ -1,6 +1,3 @@
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "xpipe-io/tap"
 brew "atuin"
 brew "dos2unix"
 brew "git"
