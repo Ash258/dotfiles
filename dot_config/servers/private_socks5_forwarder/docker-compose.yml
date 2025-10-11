@@ -1,0 +1,9 @@
+services:
+  socks5-forwarder:
+    build: .
+    ports:
+    - "1080:1080"
+    env_file:
+    - proxy.env
+    cap_add:
+    - NET_ADMIN
