@@ -1,17 +1,13 @@
-FROM debian:bullseye-slim
+FROM alpine:3.22.2
 
 ENV PROXY_PORT=1080
 
-RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
-    --mount=type=cache,target=/var/lib/apt,sharing=locked \
-    rm -f /etc/apt/apt.conf.d/docker-clean && \
-    echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache && \
-    apt-get update && \
-    apt-get --no-install-recommends install -y \
+RUN --mount=type=cache,target=/var/cache/apk,sharing=locked \
+    apk add \
     curl \
     ca-certificates \
     dante-server \
-    gettext-base \
+    envsubst \
     iptables \
     redsocks && \
     update-ca-certificates

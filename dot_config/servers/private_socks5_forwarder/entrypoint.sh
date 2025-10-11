@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 conf='/etc/redsocks.conf'
 envsubst < "${conf}.template" > "${conf}"
@@ -11,4 +11,4 @@ iptables -t nat -A OUTPUT -p tcp --dport 80 -j REDIRECT --to-ports "${REDSOCKS_P
 iptables -t nat -A OUTPUT -p tcp --dport 443 -j REDIRECT --to-ports "${REDSOCKS_PORT}"
 
 # Start Dante server
-danted -f /etc/danted.conf
+sockd -f /etc/danted.conf
