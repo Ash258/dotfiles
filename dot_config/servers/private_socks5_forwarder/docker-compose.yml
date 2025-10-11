@@ -1,8 +1,8 @@
 services:
   socks5-forwarder:
-    build: .
+    image: ghcr.io/ash258/socks5-forwarder:latest
     ports:
-    - "1080:1080"
+    - "127.0.0.1:1080:1080"
     env_file:
     - proxy.env
     cap_add:
