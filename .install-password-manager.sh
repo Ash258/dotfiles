@@ -8,7 +8,11 @@ Darwin)
     if ! type brew >/dev/null 2>&1; then
         echo 'Installing brew'
         NON_INTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh || true)" </dev/null ## /dev/null skips pressing enter for the installation
+        eval "$(/opt/homebrew/bin/brew shellenv || true)"
+        # shellcheck disable=SC2016
+        echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
     fi
+
     brew install --casks "1password-cli" "1password@beta"
     echo 'Login to 1password and enable the CLI'
     ;;
