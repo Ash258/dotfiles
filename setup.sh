@@ -8,13 +8,15 @@ mac() {
 arch() {
     # ! TODO: Consolidate with macos in .install-password-manager.sh
     echo 'Configuring Arch Linux'
-    echo '    Installing 1password-cli'
-    base='https://downloads.1password.com/linux'
-    f='support@1password.com-61ddfc31.rsa.pub'
-    echo "${base}/alpinelinux/stable/" | sudo tee -a "/etc/apk/repositories"
-    dl "${base}/keys/alpinelinux/${f}" | sudo tee "/etc/apk/keys/${f}"
     sudo apk update
-    sudo apk add 1password-cli
+    sudo apk add curl git
+    echo '    Installing 1password-cli'
+    # https://developer.1password.com/docs/cli/install-server
+    ARCH="$(uname -m | sed 's/^aarch/arm/g')"
+    OP_VERSION="v$(dl 'https://app-updates.agilebits.com/check/1/0/CLI2/en/2.0.0/N' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')"
+    curl -fsSLo op.zip "https://cache.agilebits.com/dist/1P/op2/pkg/${OP_VERSION}/op_linux_${ARCH}_${OP_VERSION}.zip"
+    sudo unzip -od /usr/local/bin/ op.zip
+    rm op.zip
 }
 
 debian() {
