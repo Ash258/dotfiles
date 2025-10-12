@@ -54,7 +54,8 @@ dl() {
 
 #region main
 branch="${CH_BRANCH:-main}"
-email="${1:-jakub.cabera@outlook.com}"
+email="${CH_EMAIL:-jakub.cabera@outlook.com}"
+email="${1:-${email}}"
 use_curl=$(type curl >/dev/null 2>&1 && echo true || echo false)
 
 echo 'Installing chezmoi'
