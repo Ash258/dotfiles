@@ -51,6 +51,7 @@ dl() {
 #endregion functions
 
 #region main
+branch="${CH_BRANCH:-main}"
 email="${1:-jakub.cabera@outlook.com}"
 use_curl=$(type curl >/dev/null 2>&1 && echo true || echo false)
 
@@ -58,7 +59,7 @@ echo 'Installing chezmoi'
 dl "https://get.chezmoi.io" | sh -s
 
 echo 'Initializing chezmoi'
-~/bin/chezmoi init ash258
+~/bin/chezmoi init ash258 --branch "${branch}"
 
 echo 'Creating chezmoi config'
 mkdir -p "${HOME}/.config/chezmoi"
