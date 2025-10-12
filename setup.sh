@@ -9,7 +9,7 @@ arch() {
     # ! TODO: Consolidate with macos in .install-password-manager.sh
     echo 'Configuring Arch Linux'
     sudo apk update
-    sudo apk add curl
+    sudo apk add curl git
     echo '    Installing 1password-cli'
     # https://developer.1password.com/docs/cli/install-server
     ARCH="$(uname -m | sed 's/^aa/a/g')"
