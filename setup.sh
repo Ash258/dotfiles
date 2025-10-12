@@ -11,7 +11,7 @@ arch() {
     echo '    Installing 1password-cli'
     base='https://downloads.1password.com/linux'
     f='support@1password.com-61ddfc31.rsa.pub'
-    echo "${base}/alpinelinux/stable/" | sudo tee --append "/etc/apk/repositories"
+    echo "${base}/alpinelinux/stable/" | sudo tee -a "/etc/apk/repositories"
     dl "${base}/keys/alpinelinux/${f}" | sudo tee "/etc/apk/keys/${f}"
     sudo apk update
     sudo apk add 1password-cli
