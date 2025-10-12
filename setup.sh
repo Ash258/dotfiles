@@ -1,9 +1,53 @@
 #!/bin/sh
 
+#region functions
+mac() {
+    echo 'Configuring macOS'
+}
+
+arch() {
+    echo 'Configuring Arch Linux'
+}
+
+debian() {
+    echo 'Configuring Debian-based Linux'
+}
+
+fail() {
+    echo "Error: ${1}"
+    exit 1
+}
+
+linux() {
+    # TODO: Detect and implement based on arch/debian/containers
+    if [ -f /etc/os-release ]; then
+        distro=$(grep '^ID=' /etc/os-release | sed 's/ID=//g')
+        case "${distro}" in
+            arch) arch ;;
+            # debian|ubuntu|linuxmint) debian ;;
+            *) fail "unsupported Linux distribution: ${distro}" ;;
+        esac
+    else
+        # TODO: Implement some dpkg/rmp/apk based detection
+        fail "unsupported Linux distribution"
+    fi
+}
+
+dl() {
+    if [ "${use_curl}" = true ]; then
+        curl -fsSL "${1}"
+    else
+        wget -qO- "${1}"
+    fi
+}
+#endregion functions
+
+#region main
 email="${1:-jakub.cabera@outlook.com}"
+use_curl=$(type curl >/dev/null 2>&1 && echo true || echo false)
 
 echo 'Installing chezmoi'
-sh -c "$(curl -fsLS get.chezmoi.io || true)"
+dl "https://get.chezmoi.io" | sh -s
 
 echo 'Initializing chezmoi'
 ~/bin/chezmoi init ash258
@@ -24,29 +68,9 @@ command = ".local/share/chezmoi/.install-password-manager.sh"
 email = "${email}"
 EOT
 
-mac() {
-    echo 'Configuring macOS'
-}
-
-arch() {
-    echo 'Configuring Arch Linux'
-}
-
-debian() {
-    echo 'Configuring Debian-based Linux'
-}
-
 case "$(uname -s)" in
-Darwin)
-    mac
-    ;;
-Linux)
-    # TODO: Detect and implement based on arch/debian/containers
-    arch
-    debin
-    ;;
-*)
-    echo "unsupported OS"
-    exit 1
-    ;;
+Darwin) mac ;;
+Linux) linux ;;
+*) fail "unsupported OS" ;;
 esac
+#endregion main
