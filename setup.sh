@@ -13,7 +13,7 @@ arch() {
     echo '    Installing 1password-cli'
     # https://developer.1password.com/docs/cli/install-server
     ARCH="$(uname -m | sed 's/^aarch/arm/g')"
-    OP_VERSION="$(dl 'https://app-updates.agilebits.com/check/1/0/CLI2/en/2.0.0/N' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')"
+    OP_VERSION="v$(dl 'https://app-updates.agilebits.com/check/1/0/CLI2/en/2.0.0/N' | grep -Eo '[0-9]+\.[0-9]+\.[0-9]+')"
     curl -fsSLo op.zip "https://cache.agilebits.com/dist/1P/op2/pkg/${OP_VERSION}/op_linux_${ARCH}_${OP_VERSION}.zip"
     sudo unzip -od /usr/local/bin/ op.zip
     rm op.zip
