@@ -23,7 +23,7 @@ linux() {
     if [ -f /etc/os-release ]; then
         distro=$(grep '^ID=' /etc/os-release | sed 's/ID=//g')
         case "${distro}" in
-            arch) arch ;;
+            arch|alpine) arch ;;
             # debian|ubuntu|linuxmint) debian ;;
             *) fail "unsupported Linux distribution: ${distro}" ;;
         esac
