@@ -6,7 +6,15 @@ mac() {
 }
 
 arch() {
+    # ! TODO: Consolidate with macos in .install-password-manager.sh
     echo 'Configuring Arch Linux'
+    echo '    Installing 1password-cli'
+    base='https://downloads.1password.com/linux'
+    f='support@1password.com-61ddfc31.rsa.pub'
+    echo "${base}/alpinelinux/stable/" | sudo tee --append "/etc/apk/repositories"
+    dl "${base}/keys/alpinelinux/${f}" | sudo tee "/etc/apk/keys/${f}"
+    sudo apk update
+    sudo apk add 1password-cli
 }
 
 debian() {
