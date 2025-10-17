@@ -4,6 +4,8 @@
 dest="${HOME}/.zsh/fpath"
 _SH='zsh'
 
+test -d "${dest}" || mkdir -p "${dest}"
+
 function tc() {
     command -v "$1" &> /dev/null
 }
