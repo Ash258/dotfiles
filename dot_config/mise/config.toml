@@ -3,7 +3,7 @@ lockfile = true
 experimental = true
 
 [tools]
-"aqua:amir20/dtop" = "0.1.1"
+"aqua:amir20/dtop" = "0.2.0"
 "aqua:FairwindsOps/polaris" = "10.1.1"
 "aqua:JanDeDobbeleer/oh-my-posh" = "27.2.1"
 "aqua:muquit/mailsend-go" = "1.0.10"
@@ -11,10 +11,10 @@ experimental = true
 "aqua:sibprogrammer/xq" = "1.3.0"
 "aqua:zyedidia/micro" = "2.0.14"
 #azure = "2.75.0"
-aws = "2.31.17"
+aws = "2.31.18"
 aws-vault = "7.2.0"
 bitwarden = "2025.10.0"
-chezmoi = "2.66.0"
+chezmoi = "2.66.1"
 cosign = "3.0.2"
 doggo = "1.0.5"
 fd = "10.3.0"
