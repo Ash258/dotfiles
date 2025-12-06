@@ -14,7 +14,6 @@ experimental = true
 aws = { version = "2.32.11", symlink_bins = "true" }
 aws-vault = "7.2.0"
 bitwarden = "2025.11.0"
-chezmoi = "2.68.0"
 cosign = "3.0.2"
 doggo = "1.1.2"
 fd = "10.3.0"
