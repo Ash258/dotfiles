@@ -11,15 +11,17 @@ SAVEHIST=5000
 HISTFILE=~/.zsh_history
 XTERM='xterm-256color'
 
+bindkey -e # Use vi keybindings even if our EDITOR is set to vi
+setopt histignorealldups sharehistory
 
 #region zsh plugins
 plugins="${HOME}/.zsh/plugins"
 for repo in \
-  "zsh-syntax-highlighting" \
-  "zsh-autosuggestions" \
-  "zsh-history-substring-search"; do
-  # shellcheck disable=SC1090
-  source "${plugins}/${repo}/${repo}.zsh"
+    "zsh-syntax-highlighting" \
+    "zsh-autosuggestions" \
+    "zsh-history-substring-search"; do
+    # shellcheck disable=SC1090
+    source "${plugins}/${repo}/${repo}.zsh"
 done
 #endregion zsh plugins
 
@@ -31,16 +33,14 @@ compinit
 #region Oh-my-posh
 arch=$(uname -m)
 case "${arch}" in
-  'aarch64') bitness='arm64' ;;
-  'arm64') bitness='arm64' ;;
+    'aarch64') bitness='arm64' ;;
+    'arm64') bitness='arm64' ;;
 
-  'x86_64') bitness='64bit' ;;
+    'x86_64') bitness='64bit' ;;
 
-  'i386') bitness='32bit' ;;
-  *) bitness='arm32' ;;
+    'i386') bitness='32bit' ;;
+    *) bitness='arm32' ;;
 esac
-
-export PATH="${HOME}/.local/bin:${PATH}"
 
 eval "$(atuin init zsh --disable-up-arrow || true)"
 eval "$(mise activate zsh || true)"
