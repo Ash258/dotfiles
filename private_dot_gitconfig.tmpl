@@ -1,13 +1,15 @@
 [user]
-    email = cabera.jakub@gmail.com
+    email = {{ .email }}
     name = Jakub Čábera
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILzpYGHklHMAySUtWsk/smE1JpX4HAi87hEXMx7p2dFZ
 [gpg]
     format = ssh
 [commit]
     gpgsign = true
+{{ if eq .chezmoi.os "darwin" -}}
 [gpg "ssh"]
     program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+{{ end -}}
 [core]
     autocrlf = input
     editor = code-insiders --wait
@@ -23,6 +25,7 @@
     selected = manager-core
 [credential]
     helper = /usr/local/share/gcm-core/git-credential-manager
+    azreposCredentialType = oauth
 [credential "https://dev.azure.com"]
     useHttpPath = true
 
