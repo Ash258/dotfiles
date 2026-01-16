@@ -27,7 +27,7 @@ done
 
 # shellcheck disable=SC2206
 fpath=("${HOME}/.zsh/fpath" ${fpath})
-autoload -Uz compinit
+autoload -Uz compinit zmv
 compinit
 
 #region Oh-my-posh
