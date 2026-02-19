@@ -1,0 +1,16 @@
+{
+    "NSGlobalDomain": {
+        "AppleAccentColor": 5,
+        "AppleShowAllExtensions": true,
+        "AppleIconAppearanceTheme": "RegularDark",
+        "NSGlassDiffusionSetting": 1
+    },
+    "com.apple.finder": {
+        "FXEnableExtensionChangeWarning": false,
+        "FXPreferredViewStyle": "Nlsv",
+        "ShowPathbar": true
+    },
+    "Apple Global Domain": {
+        "AppleLanguages": ["en-US", "cs-CZ"]
+    }
+}
