@@ -24,7 +24,7 @@ FALLBACK_VALUE = "<not set>"
 
 def main():
     is_work_device: bool = "{{ .email }}".endswith("@outlook.com")
-    # is_work_device = not is_work_device
+    is_work_device = not is_work_device
     tmpl_var: str = "{{ .chezmoi.sourceDir }}"
     if tmpl_var.startswith("{"): # Template was not evaluated, fallback to environment variable
         tmpl_var = f"{os.environ.get('HOME', '')}/.local/share/chezmoi"
