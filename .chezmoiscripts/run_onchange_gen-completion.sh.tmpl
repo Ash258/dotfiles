@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# hash: {{ include "dot_config/mise/config.toml" | sha256sum }}
+# hash: {{ include ".chezmoitemplates/Brewfile.tmpl" | sha256sum }}
+
 # TODO: Support nu
 dest="${HOME}/.zsh/fpath"
 _SH='zsh'
@@ -30,13 +33,9 @@ for tool in \
     "chezmoi" \
     "cosign" \
     "docker" \
-    "helm" \
-    "k6" \
-    "kops" \
-    "kubectl" \
     "limactl" \
     "mise" \
-    "polaris" \
+    "op" \
     "sops" \
     "step" \
     "usql" \
