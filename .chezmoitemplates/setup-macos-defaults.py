@@ -161,6 +161,9 @@ def _convert_type(data_type, value):
             return True
         elif value in [False, 0, "false", "0", "no"]:
             return False
+        else:
+            # TODO: Check if it can be better
+            return False
     elif data_type in ["int", "integer"]:
         return int(value)
     elif data_type == "list":
