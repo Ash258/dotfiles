@@ -8,9 +8,13 @@
     "com.apple.finder": {
         "FXEnableExtensionChangeWarning": false,
         "FXPreferredViewStyle": "Nlsv",
-        "ShowPathbar": true
+        "ShowPathbar": true,
+        "AppleShowAllFiles": true
     },
     "Apple Global Domain": {
-        "AppleLanguages": ["en-US", "cs-CZ"]
+        "AppleLanguages": [
+            "en-US",
+            "cs-CZ"
+        ]
     }
 }
