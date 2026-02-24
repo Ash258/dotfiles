@@ -12,9 +12,8 @@
         "AppleShowAllFiles": true
     },
     "Apple Global Domain": {
-        "AppleLanguages": [
-            "en-US",
-            "cs-CZ"
-        ]
+        "com.apple.trackpad.forceClick": 1,
+        "com.apple.swipescrolldirection": 1,
+        "AppleLanguages": ["en-US", "cs-CZ"]
     }
 }
