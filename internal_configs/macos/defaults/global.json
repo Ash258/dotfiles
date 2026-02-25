@@ -3,17 +3,29 @@
         "AppleAccentColor": 5,
         "AppleShowAllExtensions": true,
         "AppleIconAppearanceTheme": "RegularDark",
-        "NSGlassDiffusionSetting": 1
+        "NSGlassDiffusionSetting": 1,
+        "SLSMenuBarUseBlurredAppearance": 0
     },
     "com.apple.finder": {
         "FXEnableExtensionChangeWarning": false,
         "FXPreferredViewStyle": "Nlsv",
         "ShowPathbar": true,
-        "AppleShowAllFiles": true
+        "AppleShowAllFiles": true,
+        "_FXSortFoldersFirst": false
     },
     "Apple Global Domain": {
         "com.apple.trackpad.forceClick": 1,
         "com.apple.swipescrolldirection": 1,
-        "AppleLanguages": ["en-US", "cs-CZ"]
+        "AppleLanguages": [
+            "en-US",
+            "cs-CZ"
+        ]
+    },
+    "com.apple.menuextra.clock": {
+        "ShowDate": 1,
+        "ShowDayOfWeek": 1
+    },
+    "com.apple.dock": {
+        "autohide": true
     }
 }
