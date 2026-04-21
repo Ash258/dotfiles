@@ -1,0 +1,32 @@
+name: Daily mise upgrade
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: jdx/mise-action@v2
+
+      - name: Upgrade tools
+        run: mise upgrade --bump
+        env:
+          MISE_YES: "1"
+        working-directory: dot_config/mise
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git diff --quiet && exit 0
+          git add dot_config/mise/config.toml
+          git commit -m "chore(mise): Upgrade tools"
+          git push
