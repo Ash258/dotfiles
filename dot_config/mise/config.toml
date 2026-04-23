@@ -11,13 +11,13 @@ experimental = true
 "aqua:schollz/croc" = "10.4.2"
 "aqua:sibprogrammer/xq" = "1.4.0"
 "aqua:zyedidia/micro" = "2.0.15"
-aws = { version = "2.34.34", symlink_bins = "true" }
+aws = { version = "2.34.35", symlink_bins = "true" }
 aws-vault = "7.10.2"
 bitwarden = "2026.3.0"
 cosign = "3.0.6"
 doggo = "1.1.5"
 fd = "10.4.2"
-gh = "2.90.0"
+gh = "2.91.0"
 jq = "1.8.1"
 jujutsu = "0.40.0"
 lazygit = "0.61.1"
