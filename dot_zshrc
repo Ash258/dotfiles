@@ -50,3 +50,14 @@ export __SHELL_INFORMATION_POSH_258__="zsh@${ZSH_VERSION}@${bitness}"
 eval "$(oh-my-posh init zsh --print --config "${HOME}/.support/omp.yml" || true)"
 enable_poshtransientprompt
 #endregion Oh-my-posh
+
+notify() {
+  local message="${1}"
+  local title="${2}"
+  local sound="${3}"
+  if [[ -n "$sound" ]]; then
+    sound=" sound name \"$sound\""
+  fi
+
+  osascript -e "display notification \"$message\" with title \"$title\"$sound"
+}
