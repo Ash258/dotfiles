@@ -13,9 +13,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
       - uses: jdx/mise-action@v2
 
+      - name: Insall minisign
+        run: mise install aqua:jedisct1/minisign
+        env:
+          MISE_AQUA_MINISIGN: 0
+          MISE_YES: "1"
+        working-directory: dot_config/mise
       - name: Upgrade tools
         run: mise upgrade --bump
         env:
