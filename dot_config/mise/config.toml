@@ -4,14 +4,14 @@ experimental = true
 
 [tools]
 "aqua:JanDeDobbeleer/oh-my-posh" = "29.36.0"
-"aqua:amir20/dtop" = "0.7.10"
-"aqua:entireio/cli" = "0.8.42"
+"aqua:amir20/dtop" = "0.7.11"
+"aqua:entireio/cli" = "0.9.0"
 "aqua:ismaelgv/rnr" = "0.5.1"
 "aqua:muquit/mailsend-go" = "1.0.12"
 "aqua:schollz/croc" = "10.6.0"
 "aqua:sibprogrammer/xq" = "1.4.0"
 "aqua:zyedidia/micro" = "2.0.15"
-aws = { version = "2.36.9", symlink_bins = "true" }
+aws = { version = "2.36.10", symlink_bins = "true" }
 aws-vault = "7.13.1"
 bitwarden = "2026.7.0"
 cosign = "3.1.2"
