@@ -3,7 +3,7 @@ lockfile = true
 experimental = true
 
 [tools]
-"aqua:JanDeDobbeleer/oh-my-posh" = "30.0.0"
+"aqua:JanDeDobbeleer/oh-my-posh" = "30.1.1"
 "aqua:amir20/dtop" = "0.7.11"
 "aqua:entireio/cli" = "0.9.0"
 "aqua:ismaelgv/rnr" = "0.5.1"
