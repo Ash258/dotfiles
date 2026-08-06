@@ -12,15 +12,17 @@ brew "nushell"
 brew "tmux"
 
 {{- if eq .email "jakub.cabera@outlook.com" }}
+cask "steam"
+cask "tailscale-app"
+{{- end }}
+
+# Allowed apps
 cask "1password@beta"
 cask "alt-tab"
 cask "dbeaver-community"
 cask "docker-desktop"
 cask "raycast"
 cask "shottr"
-cask "steam"
-cask "tailscale-app"
 cask "visual-studio-code"
 cask "wezterm"
 cask "zed"
-{{- end }}
