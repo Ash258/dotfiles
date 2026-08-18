@@ -11,7 +11,7 @@ experimental = true
 "aqua:schollz/croc" = "11.1.1"
 "aqua:sibprogrammer/xq" = "1.5.0"
 "aqua:zyedidia/micro" = "2.0.15"
-aws = { version = "2.36.24", symlink_bins = "true" }
+aws = { version = "2.36.25", symlink_bins = "true" }
 aws-vault = "7.13.4"
 bitwarden = "2026.7.0"
 cosign = "3.1.3"
