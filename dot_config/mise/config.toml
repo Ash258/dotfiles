@@ -8,7 +8,7 @@ experimental = true
 "aqua:entireio/cli" = "0.10.3"
 "aqua:ismaelgv/rnr" = "0.5.1"
 "aqua:muquit/mailsend-go" = "1.0.12"
-"aqua:schollz/croc" = "11.3.3"
+"aqua:schollz/croc" = "11.3.4"
 "aqua:sibprogrammer/xq" = "1.5.1"
 "aqua:zyedidia/micro" = "2.0.15"
 aws = { version = "2.36.34", symlink_bins = "true" }
