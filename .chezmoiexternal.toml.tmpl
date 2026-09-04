@@ -10,3 +10,9 @@ refreshPeriod = "168h"
 type = "git-repo"
 url = "https://github.com/zsh-users/zsh-history-substring-search.git"
 refreshPeriod = "168h"
+{{- if .is_work }}
+[".config/servers/mcp/n/confluence-mcp"]
+type = "git-repo"
+url = "git@github.com:notino/confluence-mcp.git"
+refreshPeriod = "168h"
+{{- end }}
