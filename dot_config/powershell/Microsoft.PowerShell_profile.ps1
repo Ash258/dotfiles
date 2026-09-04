@@ -75,3 +75,5 @@ function Import-OpEnv {
         Write-Host "Imported $count secret(s) from $Path into the current session." -ForegroundColor Green
     }
 }
+
+(&mise activate pwsh) | Out-String | Invoke-Expression
