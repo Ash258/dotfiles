@@ -31,13 +31,10 @@ gen rclone completion "${_SH}" -
 
 for tool in \
     "chezmoi" \
-    "cosign" \
     "docker" \
     "limactl" \
     "mise" \
     "op" \
-    "sops" \
-    "step" \
     "usql" \
     "yq"; do
     gen "${tool}" completion "${_SH}"
