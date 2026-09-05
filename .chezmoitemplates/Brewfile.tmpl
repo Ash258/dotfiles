@@ -11,7 +11,7 @@ brew "mise"
 brew "nushell"
 brew "tmux"
 
-{{- if eq .email "jakub.cabera@outlook.com" }}
+{{- if not .is_work }}
 cask "steam"
 cask "tailscale-app"
 {{- end }}

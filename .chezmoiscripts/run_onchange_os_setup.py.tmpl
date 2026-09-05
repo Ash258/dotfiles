@@ -3,7 +3,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 # hashes:
 # {{ include "internal_configs/macos/defaults/global.json" | sha256sum }}
-{{- if ne .email "jakub.cabera@outlook.com" }}
+{{- if .is_work }}
 # {{ include "internal_configs/macos/defaults/work.json" | sha256sum }}
 {{- end }}
 {{ template "setup-macos-defaults.py" . -}}
