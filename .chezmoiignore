@@ -3,3 +3,7 @@ setup.sh
 ignore/
 internal_configs/
 mise.*
+{{ if not .is_work }}
+.gitconfig-work
+.ssh/id_work.pub
+{{ end }}
