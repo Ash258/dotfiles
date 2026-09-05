@@ -1,18 +1,14 @@
-[".zsh/plugins/zsh-syntax-highlighting"]
-type = "git-repo"
-url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
-refreshPeriod = "168h"
-[".zsh/plugins/zsh-autosuggestions"]
-type = "git-repo"
-url = "https://github.com/zsh-users/zsh-autosuggestions.git"
-refreshPeriod = "168h"
-[".zsh/plugins/zsh-history-substring-search"]
-type = "git-repo"
-url = "https://github.com/zsh-users/zsh-history-substring-search.git"
-refreshPeriod = "168h"
-{{- if .is_work }}
+{{ $gr := "git-repo" | quote -}}
+{{ $dr := "168h" | quote -}}
+{{ range list "zsh-syntax-highlighting" "zsh-autosuggestions" "zsh-history-substring-search" -}}
+[".zsh/plugins/{{ . }}"]
+url = "https://github.com/zsh-users/{{ . }}.git"
+refreshPeriod = {{ $dr }}
+type = {{ $gr }}
+{{ end -}}
+{{- if .is_work -}}
 [".config/servers/mcp/n/confluence-mcp"]
-type = "git-repo"
-url = "git@github.com:notino/confluence-mcp.git"
-refreshPeriod = "168h"
+url = {{ (decrypt (include ".confluence-mcp-url.age")) | trim | quote }}
+refreshPeriod = {{ $dr }}
+type = {{ $gr }}
 {{- end }}
