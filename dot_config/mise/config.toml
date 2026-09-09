@@ -3,10 +3,10 @@ lockfile = true
 experimental = true
 
 [tools]
-"aqua:JanDeDobbeleer/oh-my-posh" = "31.1.3"
+"aqua:JanDeDobbeleer/oh-my-posh" = "31.2.0"
 "aqua:ismaelgv/rnr" = "0.5.1"
 "aqua:muquit/mailsend-go" = "1.0.12"
-"aqua:schollz/croc" = "11.4.0"
+"aqua:schollz/croc" = "11.5.0"
 "aqua:sibprogrammer/xq" = "1.5.1"
 "aqua:zyedidia/micro" = "2.0.15"
 doggo = "1.4.0"
