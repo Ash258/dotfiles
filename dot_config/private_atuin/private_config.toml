@@ -2,7 +2,9 @@ sync_address = "https://at.ash258.com"
 enter_accept = true
 
 [dotfiles]
-enabled = true
+# Atuin deprecated dotfiles (aliases/vars) sync; migrated to chezmoi-managed
+# ~/.aliases.zsh and ~/.secrets.zsh, sourced from .zshrc.
+enabled = false
 
 [sync]
 # Enable sync v2 by default
