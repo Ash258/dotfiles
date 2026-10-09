@@ -1,3 +1,8 @@
+try {
+        Set-PSReadlineOption -HistoryNoDuplicates:$true
+        Set-PSReadlineOption -PredictionSource History
+} catch {}
+
 function Import-OpEnv {
     <#
     .SYNOPSIS
@@ -76,4 +81,14 @@ function Import-OpEnv {
     }
 }
 
+(&atuin init powershell) | Out-String | Invoke-Expression
 (&mise activate pwsh) | Out-String | Invoke-Expression
+
+#region Oh-my-posh
+$bitness = if ([System.IntPtr]::Size -eq 8) { '64bit' } else { '32bit' }
+$bitness = 'arm64'
+$ps = if ($PSVersionTable.PSVersion.Major -ge 6) { 'pwsh' } else { 'ps' }
+$ps += '@' + $PSVersionTable.PSVersion.ToString()
+$env:__SHELL_INFORMATION_POSH_258__ = "$ps@$bitness"
+(&oh-my-posh init 'pwsh' --print --config "${env:HOME}/.support/omp.yml") | Out-String | Invoke-Expression
+#endregion Oh-my-posh
