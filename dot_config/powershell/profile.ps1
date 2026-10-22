@@ -1,6 +1,6 @@
 try {
-        Set-PSReadlineOption -HistoryNoDuplicates:$true
-        Set-PSReadlineOption -PredictionSource History
+    Set-PSReadlineOption -HistoryNoDuplicates:$true
+    Set-PSReadlineOption -PredictionSource History
 } catch {}
 
 function Import-OpEnv {
@@ -81,7 +81,7 @@ function Import-OpEnv {
     }
 }
 
-(&atuin init powershell) | Out-String | Invoke-Expression
+(&atuin init powershell --disable-up-arrow) | Out-String | Invoke-Expression
 (&mise activate pwsh) | Out-String | Invoke-Expression
 
 #region Oh-my-posh
