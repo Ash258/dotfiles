@@ -6,4 +6,5 @@ mise.*
 {{ if not .is_work }}
 .gitconfig-work
 .ssh/id_work.pub
+.claude/mcp-wrappers
 {{ end }}

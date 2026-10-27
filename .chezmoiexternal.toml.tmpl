@@ -8,7 +8,12 @@ type = {{ $gr }}
 {{ end -}}
 {{- if .is_work -}}
 [".config/servers/mcp/n/confluence-mcp"]
-url = {{ (decrypt (include ".confluence-mcp-url.age")) | trim | quote }}
+url = {{ (decrypt (include ".secrets/confluence-mcp-url.age")) | trim | quote }}
+refreshPeriod = {{ $dr }}
+type = {{ $gr }}
+
+[".config/servers/mcp/n/identity-management-ai-mcp-idm"]
+url = {{ (decrypt (include ".secrets/idm-mcp-url.age")) | trim | quote }}
 refreshPeriod = {{ $dr }}
 type = {{ $gr }}
 {{- end }}
