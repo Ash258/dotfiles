@@ -1,0 +1,15 @@
+#!/bin/sh
+# Creates ~/.claude/skills/<name>/SKILL.md from the encrypted files in .secrets/.claude-skills/.
+# The folder name comes from each file's "name:" frontmatter line.
+set -eu
+skills_dir="{{ .chezmoi.destDir }}/.claude/skills"
+{{ range (glob (joinPath .chezmoi.sourceDir ".secrets/.claude-skills/*.age")) -}}
+{{   $content := include . | decrypt -}}
+{{   $name := regexReplaceAll "^name:|[\"' \t]" (regexFind "(?m)^name:[ \t]*[\"']?[a-z0-9-]+[\"']?[ \t]*$" $content) "" -}}
+{{   if not $name }}{{ fail (printf "%s: missing or invalid name: line" (base .)) }}{{ end -}}
+mkdir -p "$skills_dir/{{ $name }}"
+cat > "$skills_dir/{{ $name }}/SKILL.md" <<'CHEZMOI_SKILL_EOF'
+{{ $content | trimSuffix "\n" }}
+CHEZMOI_SKILL_EOF
+echo "claude skill: {{ $name }}"
+{{ end -}}
