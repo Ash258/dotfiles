@@ -11,9 +11,4 @@ type = {{ $gr }}
 url = {{ (decrypt (include ".secrets/confluence-mcp-url.age")) | trim | quote }}
 refreshPeriod = {{ $dr }}
 type = {{ $gr }}
-
-[".config/servers/mcp/n/identity-management-ai-mcp-idm"]
-url = {{ (decrypt (include ".secrets/idm-mcp-url.age")) | trim | quote }}
-refreshPeriod = {{ $dr }}
-type = {{ $gr }}
 {{- end }}
