@@ -1,9 +1,13 @@
 #!/bin/sh
-# Creates ~/.claude/skills/<name>/SKILL.md from the encrypted files in .secrets/.claude-skills/.
+# Creates ~/.claude/skills/<name>/SKILL.md from the encrypted files in .secrets/.claude-skills/common/
+# and, on work machines, .secrets/.claude-skills/work/.
 # The folder name comes from each file's "name:" frontmatter line.
 set -eu
 skills_dir="{{ .chezmoi.destDir }}/.claude/skills"
-{{ range (glob (joinPath .chezmoi.sourceDir ".secrets/.claude-skills/*.age")) -}}
+{{ $skillsSrc := joinPath .chezmoi.sourceDir ".secrets/.claude-skills" -}}
+{{ $files := glob (joinPath $skillsSrc "common/*.age") -}}
+{{ if .is_work }}{{ $files = concat $files (glob (joinPath $skillsSrc "work/*.age")) }}{{ end -}}
+{{ range $files -}}
 {{   $content := include . | decrypt -}}
 {{   $name := regexReplaceAll "^name:|[\"' \t]" (regexFind "(?m)^name:[ \t]*[\"']?[a-z0-9-]+[\"']?[ \t]*$" $content) "" -}}
 {{   if not $name }}{{ fail (printf "%s: missing or invalid name: line" (base .)) }}{{ end -}}
