@@ -1,0 +1,5 @@
+{{ if eq .chezmoi.os "darwin" -}}
+{{ include ".secrets/seed-mcp-keychain.sh.age" | decrypt }}
+# Re-seed whenever the plugin changes (after the decrypted body, so its shebang stays on line 1)
+# hash: {{ include "private_dot_claude/marketplaces/dotfiles/personal-kb/dot_claude-plugin/plugin.json" | sha256sum }}
+{{- end }}

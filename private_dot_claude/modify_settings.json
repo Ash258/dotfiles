@@ -1,0 +1,10 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /* Merges the dotfiles marketplace into settings.json, keeping everything Claude Code writes there itself */ -}}
+{{- $settings := dict -}}
+{{- if .chezmoi.stdin | trim -}}
+{{-   $settings = fromJson .chezmoi.stdin -}}
+{{- end -}}
+{{- $marketplace := dict "source" "directory" "path" (joinPath .chezmoi.homeDir ".claude/marketplaces/dotfiles") -}}
+{{- $settings = setValueAtPath (list "extraKnownMarketplaces" "dotfiles" "source") $marketplace $settings -}}
+{{- $settings = setValueAtPath (list "enabledPlugins" "personal-kb@dotfiles") true $settings -}}
+{{- toPrettyJson "  " $settings }}

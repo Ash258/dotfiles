@@ -1,0 +1,13 @@
+{
+  "name": "dotfiles",
+  "owner": {
+    "name": "Jakub Čábera"
+  },
+  "plugins": [
+    {
+      "name": "personal-kb",
+      "source": "./personal-kb",
+      "description": "Personal knowledgebase tools"
+    }
+  ]
+}
