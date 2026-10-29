@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+echo 'Removing old configurations'
+{{- if .is_work }}
+
+# IDM MCP server, to be replaced by a custom Claude plugin
+rm -rf "${HOME}/.config/servers/mcp/n/identity-management-ai-mcp-idm"
+{{- end }}
