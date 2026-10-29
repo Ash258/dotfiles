@@ -54,6 +54,7 @@ enable_poshtransientprompt
 #region aliases and secrets (migrated from atuin dotfiles, now deprecated)
 [[ -f "${HOME}/.aliases.zsh" ]] && source "${HOME}/.aliases.zsh"
 [[ -f "${HOME}/.secrets.zsh" ]] && source "${HOME}/.secrets.zsh"
+[[ -f "${HOME}/.work.zsh" ]] && source "${HOME}/.work.zsh"
 #endregion aliases and secrets
 
 notify() {
