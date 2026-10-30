@@ -5,7 +5,7 @@ experimental = true
 [tools]
 "aqua:JanDeDobbeleer/oh-my-posh" = "31.9.1"
 "aqua:ismaelgv/rnr" = "0.5.1"
-"aqua:muquit/mailsend-go" = "1.0.13"
+"aqua:muquit/mailsend-go" = "1.0.14"
 "aqua:schollz/croc" = "11.5.5"
 "aqua:sibprogrammer/xq" = "1.5.1"
 "aqua:zyedidia/micro" = "2.0.15"
