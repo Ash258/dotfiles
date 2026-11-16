@@ -9,5 +9,12 @@
       "source": "./personal-kb",
       "description": "Personal knowledgebase tools"
     }
+{{- if .is_work }},
+    {
+      "name": "work",
+      "source": "./work",
+      "description": "Work MCP servers"
+    }
+{{- end }}
   ]
 }

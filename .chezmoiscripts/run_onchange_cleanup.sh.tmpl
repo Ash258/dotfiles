@@ -5,4 +5,12 @@ echo 'Removing old configurations'
 
 # IDM MCP server, to be replaced by a custom Claude plugin
 rm -rf "${HOME}/.config/servers/mcp/n/identity-management-ai-mcp-idm"
+
+# Confluence and WS1 MCP servers moved from user-scope registrations into the "work" plugin
+rm -f "${HOME}/.local/bin/confluence-mcp"
+if (cd "{{ .chezmoi.sourceDir }}" && claude --version) >/dev/null 2>&1; then
+    for server in confluence ws1; do
+        (cd "{{ .chezmoi.sourceDir }}" && claude mcp remove --scope user "$server") >/dev/null 2>&1 || true
+    done
+fi
 {{- end }}

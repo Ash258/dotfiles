@@ -1,0 +1,5 @@
+{{ if and .is_work (eq .chezmoi.os "darwin") -}}
+{{ include ".secrets/seed-confluence-keychain.sh.age" | decrypt }}
+# Re-seed whenever the work plugin changes (after the decrypted body, so its shebang stays on line 1)
+# hash: {{ include "private_dot_claude/marketplaces/dotfiles/work/dot_claude-plugin/plugin.json" | sha256sum }}
+{{- end }}

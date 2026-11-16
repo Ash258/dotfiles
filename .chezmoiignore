@@ -7,4 +7,5 @@ mise.*
 .gitconfig-work
 .ssh/id_work.pub
 .work.zsh
+.claude/marketplaces/dotfiles/work
 {{ end }}

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "confluence": {
+      "command": "${CLAUDE_PLUGIN_ROOT}/bin/confluence-mcp"
+    },
+    "ws1": {
+      "command": "${HOME}/.local/bin/ws1-mcp"
+    }
+  }
+}
