@@ -1,0 +1,7 @@
+#!/bin/sh
+# SSH_ASKPASS helper: answers ssh password prompts from 1Password.
+# ssh passes the prompt text as $1; SWSSH_OP_REF holds the op:// reference.
+case "$1" in
+  *assword*) exec op read --no-newline "${SWSSH_OP_REF:?SWSSH_OP_REF not set}" ;;
+  *) exit 1 ;;  # don't answer host-key yes/no prompts with the password
+esac
