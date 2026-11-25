@@ -3,7 +3,7 @@ lockfile = true
 experimental = true
 
 [tools]
-"aqua:JanDeDobbeleer/oh-my-posh" = "33.3.1"
+"aqua:JanDeDobbeleer/oh-my-posh" = "33.4.0"
 "aqua:ismaelgv/rnr" = "0.5.1"
 "aqua:muquit/mailsend-go" = "1.0.14"
 "aqua:schollz/croc" = "11.6.6"
