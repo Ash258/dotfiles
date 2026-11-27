@@ -7,5 +7,8 @@ mise.*
 .gitconfig-work
 .ssh/id_work.pub
 .work.zsh
+.local/bin/op-ssh-askpass
+.local/bin/daily-work
+.local/share/ws1-mcp
 .claude/marketplaces/dotfiles/work
 {{ end }}
