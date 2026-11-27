@@ -1,0 +1,23 @@
+{{ if and .is_work (eq .chezmoi.os "darwin") -}}
+#!/bin/sh
+# Installs the Workspace ONE (MDM) MCP server from the wheel deployed to ~/.local/share/ws1-mcp
+# (ws1-mcp on PATH). The "work" Claude Code plugin starts it as "ws1". Re-runs whenever the encrypted wheel changes.
+# hash: {{ include "dot_local/share/ws1-mcp/encrypted_ws1_mcp-0.1.0-py3-none-any.whl.age" | sha256sum }}
+set -eu
+
+wheel="{{ .chezmoi.destDir }}/.local/share/ws1-mcp/ws1_mcp-0.1.0-py3-none-any.whl"
+
+if ! command -v uv >/dev/null 2>&1; then
+    echo "ws1-mcp: uv not found, skipping install" >&2
+    exit 0
+fi
+
+echo "ws1-mcp: installing $(basename "$wheel")"
+uv tool install --force --python 3.12 "$wheel"
+bin="$(uv tool dir --bin)/ws1-mcp"
+
+# Login is interactive (password and tenant code go to the macOS Keychain), so it is not run here.
+if [ ! -f "${WS1_MCP_HOME:-$HOME/.ws1_mcp}/config.toml" ]; then
+    echo "ws1-mcp: not logged in yet, run: $bin login"
+fi
+{{ end -}}

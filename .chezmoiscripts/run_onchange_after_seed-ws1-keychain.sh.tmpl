@@ -1,0 +1,5 @@
+{{ if and .is_work (eq .chezmoi.os "darwin") -}}
+{{ include ".secrets/seed-ws1-keychain.sh.age" | decrypt }}
+# Re-seed whenever ws1-mcp is reinstalled (after the decrypted body, so its shebang stays on line 1)
+# hash: {{ include "dot_local/share/ws1-mcp/encrypted_ws1_mcp-0.1.0-py3-none-any.whl.age" | sha256sum }}
+{{- end }}
