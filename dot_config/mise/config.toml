@@ -3,7 +3,7 @@ lockfile = true
 experimental = true
 
 [tools]
-"aqua:JanDeDobbeleer/oh-my-posh" = "33.4.0"
+"aqua:JanDeDobbeleer/oh-my-posh" = "33.4.1"
 "aqua:ismaelgv/rnr" = "0.5.1"
 "aqua:muquit/mailsend-go" = "1.0.14"
 "aqua:schollz/croc" = "11.6.6"
@@ -11,7 +11,7 @@ experimental = true
 "aqua:zyedidia/micro" = "2.0.15"
 doggo = "1.4.2"
 fd = "10.5.2"
-gh = "2.105.0"
+gh = "2.106.0"
 jq = "1.8.2"
 jujutsu = "0.47.1"
 lazygit = "0.66.3"
